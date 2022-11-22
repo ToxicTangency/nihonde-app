@@ -1,4 +1,4 @@
-import sanityClient from '../olive-gull/node_modules/@sanity/client'
+import sanityClient from '@sanity/client'
 
 const client = sanityClient({
   projectId: 'epd7a49a',
