@@ -1,0 +1,83 @@
+/* add css */
+.post-enter {
+  opacity: 0;
+}
+.post-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.filter{
+  display: flex;
+  justify-content: space-between;
+}
+.page__wrapper{
+  margin-top: 30px;
+  display: flex;
+}
+
+.post-card.liked span, .single-post.liked .likes span:first-child{
+  background-color: #000;
+  color: #fff;
+}
+.single-post .likes{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.single-post .likes span{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.filter{
+  margin-top: 30px;
+}
+.single-post__title.small, 
+.post-card__image img, 
+.post-card .single-post__category, 
+.single-post .single-post__category,
+.footer__category{
+  cursor: pointer;
+}
+.menu-open .menu__body {
+  z-index: 2;
+}
+
+.swiper .post-card{
+  width: 100%;
+}
+.swiper-pagination{
+  margin-top: 20px;
+  position: relative!important;
+}
+.swiper-pagination-bullet-active{
+  background-color: #000!important;
+}
+.homePage .single-post__title, .homePage .single-post__image{
+  cursor: pointer;
+} 
+@media (max-width:1028px) {
+  .post-card{
+    width: 47%;
+  }
+}
+@media (max-width:768px) {
+  .post-card{
+    width: 100%;
+  }
+  .single-post__title{
+    font-size: 22px;
+    line-height: normal;
+  }
+}
