@@ -7,17 +7,17 @@ export default function MobileNavbar({ openMenu }) {
       <ul className='menu__list'>
         <li className='menu__item'>
           <Link className='menu__link' to='/' onClick={openMenu}>
-            Home
+            Главная
           </Link>
         </li>
         <li className='menu__item'>
           <Link className='menu__link' to='/posts' onClick={openMenu}>
-            Posts
+            Блог
           </Link>
         </li>
         <li className='menu__item'>
           <Link className='menu__link' to='/about' onClick={openMenu}>
-            About
+            О нас
           </Link>
         </li>
       </ul>

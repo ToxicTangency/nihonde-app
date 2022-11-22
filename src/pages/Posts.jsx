@@ -28,7 +28,7 @@ function Posts() {
 
   return (
     <div>
-      <div className='single-post__category'>LATEST POSTS</div>
+      <div className='single-post__category'>Новое</div>
       <PostFilter filter={filter} setFilter={setFilter} />
       <PostList posts={sortedAndSearchedPosts} />
       {isLoading && <Loader />}

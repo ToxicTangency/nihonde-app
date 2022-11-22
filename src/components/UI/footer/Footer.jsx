@@ -9,30 +9,25 @@ export default function Footer() {
           <div className='footer__logo'>
             <img src='img/logo-w.png' alt='' />
           </div>
-          <div className='footer__copyright'>© 2022 Noiceland</div>
+          <div className='footer__copyright'>© 2022 Hihonde</div>
         </div>
 
         <div className='footer__menu'>
           <div className='footer__categories'>
-            <div className='footer__tag'>Categories</div>
+            <div className='footer__tag'>Категории</div>
 
             <div className='footer__categories-wrapper'>
               <div className='footer__category'>
-                <Link to='/category/Interactive-design'>
-                  Interactive Design
-                </Link>
+                <Link to='/category/traditions'>Традиции</Link>
               </div>
               <div className='footer__category'>
-                <Link to='/category/Architecture'>Architecture</Link>
+                <Link to='/'>Современная культура</Link>
               </div>
               <div className='footer__category'>
-                <Link to='/category/Graphic-design'>Graphic Design</Link>
+                <Link to='/'>Кухня</Link>
               </div>
               <div className='footer__category'>
-                <Link to='/category/Photography'>Photography</Link>
-              </div>
-              <div className='footer__category'>
-                <Link to='/category/Illustration'>Illustration</Link>
+                <Link to='/'>Архитектура</Link>
               </div>
             </div>
           </div>
@@ -41,13 +36,13 @@ export default function Footer() {
             <div className='footer__tag'>Information</div>
             <div className='footer__categories-wrapper'>
               <div className='footer__category'>
-                <Link to='/'>home</Link>
+                <Link to='/'>Главная</Link>
               </div>
               <div className='footer__category'>
-                <Link to='/posts'>posts</Link>
+                <Link to='/posts'>Блог</Link>
               </div>
               <div className='footer__category'>
-                <Link to='/about'>about</Link>
+                <Link to='/about'>О нас</Link>
               </div>
             </div>
           </div>

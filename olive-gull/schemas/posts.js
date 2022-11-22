@@ -22,9 +22,9 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'categoryslug',
+      name: 'categoryname',
       type: 'string',
-      title: 'category-slug',
+      title: 'category-name',
       validation: Rule => Rule.required(),
     },
     {

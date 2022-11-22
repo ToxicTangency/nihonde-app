@@ -6,13 +6,13 @@ export default function Navbar() {
     <nav className='header__nav'>
       <ul>
         <li className='header__nav-elem'>
-          <Link to='/'>Home</Link>
+          <Link to='/'>Главная</Link>
         </li>
         <li className='header__nav-elem'>
-          <Link to='/posts'>Posts</Link>
+          <Link to='/posts'>Блог</Link>
         </li>
         <li className='header__nav-elem'>
-          <Link to='/about'>About</Link>
+          <Link to='/about'>О нас</Link>
         </li>
       </ul>
     </nav>

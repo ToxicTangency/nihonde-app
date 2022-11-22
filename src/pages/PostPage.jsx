@@ -76,7 +76,7 @@ export default function PostPage() {
                 <PortableText value={post.text} components={BlockContent} />
               </div>
 
-              <div className='single-post__author'>By {post.author}</div>
+              <div className='single-post__author'>{post.author}</div>
               <div className='likes'>
                 <LikeButton onClick={() => addLike()} />
                 <LikeCounter likes={post.likes} />

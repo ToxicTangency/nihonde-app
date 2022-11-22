@@ -52,7 +52,7 @@ export default function PostItem(props) {
           className='single-post__title small'>
           {props.post.title}
         </div>
-        <div className='single-post__author'>By {props.post.author}</div>
+        <div className='single-post__author'>{props.post.author}</div>
       </div>
     </div>
   )
