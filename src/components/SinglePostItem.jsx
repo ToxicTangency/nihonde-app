@@ -58,7 +58,7 @@ export default function PostItem(props) {
             {props.post.title}
           </div>
 
-          <div className='single-post__author'>By {props.post.author}</div>
+          <div className='single-post__author'>{props.post.author}</div>
           <div className='likes'>
             <LikeButton onClick={() => addLike()} />
             <LikeCounter likes={props.post.likes} />
