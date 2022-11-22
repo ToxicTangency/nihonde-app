@@ -23,7 +23,7 @@ export default class PostService {
 
   static async getCategories() {
     let QUERY_CATS = encodeURIComponent(`*[_type == 'posts'] {
-      category
+      category-slug
     }`)
     let PROJECT_CATS = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY_CATS}`
 
