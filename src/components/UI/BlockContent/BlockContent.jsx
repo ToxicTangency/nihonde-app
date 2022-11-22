@@ -1,4 +1,4 @@
-import imageUrlBuilder from '../../../olive-gull/node_modules/@sanity/image-url'
+import imageUrlBuilder from '@sanity/image-url'
 import client from '../../../lib/client.js'
 
 const builder = imageUrlBuilder(client)
