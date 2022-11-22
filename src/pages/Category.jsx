@@ -32,6 +32,7 @@ function Category() {
     fetchPosts()
     window.scrollTo(0, 0)
     document.title = lastSegment + '  - NOICELAND'
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location])
 
   return (

@@ -23,6 +23,7 @@ export default function PostPage() {
     fetchPostById(params.id)
     window.scrollTo(0, 0)
     document.title = 'Post ' + params.id + '  - NOICELAND'
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const [like, setLike] = useState(post.likes)

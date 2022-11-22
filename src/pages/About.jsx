@@ -18,6 +18,7 @@ export default function About() {
   useEffect(() => {
     fetchAbout()
     document.title = 'About - NOICELAND'
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const builder = imageUrlBuilder(client)

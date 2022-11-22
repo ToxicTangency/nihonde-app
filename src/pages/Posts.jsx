@@ -23,6 +23,7 @@ function Posts() {
     fetchPosts()
     window.scrollTo(0, 0)
     document.title = 'Posts - NOICELAND'
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

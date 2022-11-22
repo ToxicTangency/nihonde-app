@@ -24,6 +24,7 @@ export default function Home() {
     fetchPosts()
     fetchCategories()
     document.title = 'Home - NOICELAND'
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
