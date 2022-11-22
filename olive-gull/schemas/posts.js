@@ -22,6 +22,12 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'category-slug',
+      type: 'string',
+      title: 'category',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'text',
       type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
