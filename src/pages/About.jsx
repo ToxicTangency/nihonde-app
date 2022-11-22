@@ -3,7 +3,7 @@ import { useFetching } from '../hooks/useFetching'
 import PostService from '../API/PostService'
 import Loader from '../components/UI/Loader/Loader'
 import client from '../lib/client.js'
-import imageUrlBuilder from '@sanity/image-url'
+import imageUrlBuilder from '../olive-gull/node_modules/@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import BlockContent from '../components/UI/BlockContent/BlockContent'
 

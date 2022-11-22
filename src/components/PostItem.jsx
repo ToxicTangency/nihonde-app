@@ -3,7 +3,7 @@ import LikeButton from './UI/LikeButton/LikeButton'
 import LikeCounter from './UI/LikeCounter/LikeCounter'
 import { useNavigate } from 'react-router-dom'
 import client from '../lib/client.js'
-import imageUrlBuilder from '@sanity/image-url'
+import imageUrlBuilder from '../olive-gull/node_modules/@sanity/image-url'
 
 export default function PostItem(props) {
   const [like, setLike] = useState(props.post.likes)
