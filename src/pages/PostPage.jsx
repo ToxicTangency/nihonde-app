@@ -67,7 +67,7 @@ export default function PostPage() {
               <div
                 className='single-post__category'
                 onClick={() => router(`/category/${post.category}`)}>
-                {post.category}
+                {post.categoryname}
               </div>
 
               <div className='single-post__title'>{post.title}</div>

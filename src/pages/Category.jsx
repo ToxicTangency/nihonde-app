@@ -10,7 +10,6 @@ import Loader from '../components/UI/Loader/Loader'
 
 function Category() {
   const [posts, setPosts] = useState([])
-
   const [filter, setFilter] = useState({ sort: '', query: '' })
 
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
@@ -18,6 +17,10 @@ function Category() {
   let url = window.location.href.split('/')
   let lastSegment = url.pop() || url.pop()
 
+  let categoryName = ''
+  if (posts[0]) {
+    categoryName = posts[0].categoryname
+  }
   const [fetchPosts, isLoading] = useFetching(async () => {
     const response = await PostService.getAll()
     var result = response.filter(obj => {
@@ -37,7 +40,7 @@ function Category() {
 
   return (
     <div>
-      <div className='single-post__category'>{lastSegment}</div>
+      <div className='single-post__category'>{categoryName}</div>
       <PostFilter filter={filter} setFilter={setFilter} />
       <PostList posts={sortedAndSearchedPosts} />
       {isLoading && <Loader />}

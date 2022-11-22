@@ -49,7 +49,7 @@ export default function PostItem(props) {
           <div
             className='single-post__category'
             onClick={() => router(`/category/${props.post.category}`)}>
-            {props.post.category}
+            {props.post.categoryname}
           </div>
 
           <div

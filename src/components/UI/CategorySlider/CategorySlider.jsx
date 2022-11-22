@@ -34,7 +34,7 @@ export default function CategorySlider({ categories }) {
             <div
               className={cl.categoryItem}
               onClick={() => router(`/category/${category.category}`)}>
-              {category.category}
+              {category.categoryname}
             </div>
           </SwiperSlide>
         ))}
