@@ -1,10 +1,10 @@
-import React from 'react'
-import cl from './SortSelect.module.css'
+import React from 'react';
+import cl from './SortSelect.module.css';
 
 export default function SortSelect({ options, defaultValue, value, onChange }) {
   return (
     <div>
-      <span>Sort by: </span>
+      <span>Сортировать по: </span>
       <select
         className={cl.sortSelect}
         value={value}
@@ -19,5 +19,5 @@ export default function SortSelect({ options, defaultValue, value, onChange }) {
         ))}
       </select>
     </div>
-  )
+  );
 }

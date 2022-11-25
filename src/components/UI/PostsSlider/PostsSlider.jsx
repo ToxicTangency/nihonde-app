@@ -1,15 +1,15 @@
-import React from 'react'
-import { Virtual } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import PostItem from '../../PostItem'
+import React from 'react';
+import { Virtual } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import PostItem from '../../PostItem';
 
 export default function PostsSlider({ posts }) {
   return (
     <div>
-      <div className='single-post__category'>LATEST POSTS</div>
+      <div className='single-post__category'>НОВОЕ</div>
       <Swiper
         pagination={{ clickable: true, dynamicBullets: true }}
         modules={[Pagination, Virtual]}
@@ -24,5 +24,5 @@ export default function PostsSlider({ posts }) {
         ))}
       </Swiper>
     </div>
-  )
+  );
 }

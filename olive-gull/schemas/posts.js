@@ -1,6 +1,9 @@
+import { BsFileEarmarkPost } from 'react-icons/bs';
+
 export default {
   name: 'posts',
   type: 'document',
+  icon: BsFileEarmarkPost,
   title: 'Posts',
   fields: [
     {
@@ -12,14 +15,14 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'title',
+      title: 'Title',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'category',
-      type: 'string',
-      title: 'category',
-      validation: Rule => Rule.required(),
+      title: 'Post Category',
+      name: 'postCategory',
+      type: 'reference',
+      to: [{ type: 'categories' }],
     },
     {
       name: 'categoryname',
@@ -57,4 +60,4 @@ export default {
       validation: Rule => Rule.required(),
     },
   ],
-}
+};

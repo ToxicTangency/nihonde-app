@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
                 <Link to='/'>Современная культура</Link>
               </div>
               <div className='footer__category'>
-                <Link to='/'>Кухня</Link>
+                <Link to='/category/food'>Кухня</Link>
               </div>
               <div className='footer__category'>
                 <Link to='/'>Архитектура</Link>
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           <div className='footer__categories'>
-            <div className='footer__tag'>Information</div>
+            <div className='footer__tag'>Меню</div>
             <div className='footer__categories-wrapper'>
               <div className='footer__category'>
                 <Link to='/'>Главная</Link>
@@ -49,5 +49,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

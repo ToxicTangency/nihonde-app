@@ -1,6 +1,6 @@
-import React from 'react'
-import SortSelect from './UI/select/SortSelect'
-import MyInput from './UI/input/MyInput'
+import React from 'react';
+import SortSelect from './UI/select/SortSelect';
+import MyInput from './UI/input/MyInput';
 
 export default function PostFilter({ filter, setFilter }) {
   return (
@@ -14,8 +14,11 @@ export default function PostFilter({ filter, setFilter }) {
         value={filter.sort}
         onChange={selectedSort => setFilter({ ...filter, sort: selectedSort })}
         defaultValue='По умолчанию'
-        options={[{ value: 'title', name: 'По алфавиту' }]}
+        options={[
+          { value: 'title', name: 'По алфавиту' },
+          { value: 'date', name: 'По дате' },
+        ]}
       />
     </div>
-  )
+  );
 }

@@ -1,6 +1,9 @@
+import { GrCircleInformation } from 'react-icons/gr';
+
 export default {
   name: 'about',
   type: 'document',
+  icon: GrCircleInformation,
   title: 'About',
   fields: [
     {
@@ -34,4 +37,4 @@ export default {
       validation: Rule => Rule.required(),
     },
   ],
-}
+};
