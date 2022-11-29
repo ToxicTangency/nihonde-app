@@ -67,10 +67,8 @@ export default function PostPage() {
             <div className='single-post__content'>
               <div
                 className='single-post__category'
-                onClick={() =>
-                  router(`/category/${post.postCategory.categorySlug}`)
-                }>
-                {post.postCategory && post.postCategory.category}
+                onClick={() => router(`/category/${post.category.slug}`)}>
+                {post.category && post.category.name}
               </div>
 
               <div className='single-post__title'>{post.title}</div>
@@ -79,7 +77,7 @@ export default function PostPage() {
                 <PortableText value={post.text} components={BlockContent} />
               </div>
 
-              <div className='single-post__author'>{post.author}</div>
+              <div className='single-post__author'>{post.date}</div>
               <div className='likes'>
                 <LikeButton onClick={() => addLike()} />
                 <LikeCounter likes={post.likes} />

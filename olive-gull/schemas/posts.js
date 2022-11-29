@@ -19,16 +19,16 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      title: 'Post Category',
-      name: 'postCategory',
-      type: 'reference',
-      to: [{ type: 'categories' }],
+      name: 'slug',
+      type: 'string',
+      title: 'Slug',
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'categoryname',
-      type: 'string',
-      title: 'category-name',
-      validation: Rule => Rule.required(),
+      title: 'Post Category',
+      name: 'category',
+      type: 'reference',
+      to: [{ type: 'categories' }],
     },
     {
       name: 'text',
@@ -47,6 +47,9 @@ export default {
       type: 'date',
       title: 'date',
       validation: Rule => Rule.required(),
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+      },
     },
     {
       name: 'likes',

@@ -5,10 +5,15 @@ import Loader from '../components/UI/Loader/Loader';
 import PostsSlider from '../components/UI/PostsSlider/PostsSlider';
 import MainSlider from '../components/UI/MainSlider/MainSlider';
 import CategorySlider from '../components/UI/CategorySlider/CategorySlider';
+import { useSortedPosts } from '../hooks/usePost';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  const [filter] = useState({ sort: 'date' });
+
+  const sortedPosts = useSortedPosts(posts, filter.sort);
 
   const [fetchPosts, isLoading] = useFetching(async () => {
     const response = await PostService.getAll();
@@ -31,7 +36,7 @@ export default function Home() {
     <div className='homePage'>
       <MainSlider posts={posts} />
       <CategorySlider categories={categories} />
-      <PostsSlider posts={posts} />
+      <PostsSlider posts={sortedPosts} />
       {isLoading && <Loader />}
     </div>
   );

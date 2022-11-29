@@ -17,6 +17,7 @@ export default function PostFilter({ filter, setFilter }) {
         options={[
           { value: 'title', name: 'По алфавиту' },
           { value: 'date', name: 'По дате' },
+          { value: 'likes', name: 'По лайкам' },
         ]}
       />
     </div>

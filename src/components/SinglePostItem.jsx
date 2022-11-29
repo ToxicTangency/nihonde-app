@@ -39,7 +39,7 @@ export default function PostItem(props) {
         <div className='single-post__image'>
           {props.post.image && (
             <img
-              onClick={() => router(`/posts/${props.post.id}`)}
+              onClick={() => router(`/posts/post-${props.post.id}`)}
               src={urlFor(props.post.image).url()}
               alt=''
             />
@@ -49,19 +49,17 @@ export default function PostItem(props) {
         <div className='single-post__content'>
           <div
             className='single-post__category'
-            onClick={() =>
-              router(`/category/${props.post.postCategory.categorySlug}`)
-            }>
-            {props.post.postCategory.category}
+            onClick={() => router(`/category/${props.post.category.slug}`)}>
+            {props.post.category.name}
           </div>
 
           <div
             className='single-post__title'
-            onClick={() => router(`/posts/${props.post.id}`)}>
+            onClick={() => router(`/posts/post-${props.post.id}`)}>
             {props.post.title}
           </div>
 
-          <div className='single-post__author'>{props.post.author}</div>
+          <div className='single-post__author'>{props.post.date}</div>
           <div className='likes'>
             <LikeButton onClick={() => addLike()} />
             <LikeCounter likes={props.post.likes} />

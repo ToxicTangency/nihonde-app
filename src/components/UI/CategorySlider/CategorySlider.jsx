@@ -33,10 +33,8 @@ export default function CategorySlider({ categories }) {
           <SwiperSlide key={index} virtualIndex={index}>
             <div
               className={cl.categoryItem}
-              onClick={() =>
-                router(`/category/${category.postCategory.categorySlug}`)
-              }>
-              {category.postCategory.category}
+              onClick={() => router(`/category/${category.category.slug}`)}>
+              {category.category.name}
             </div>
           </SwiperSlide>
         ))}

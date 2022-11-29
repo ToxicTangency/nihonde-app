@@ -7,13 +7,13 @@ export default {
   title: 'Categories',
   fields: [
     {
-      name: 'category',
+      name: 'name',
       type: 'string',
       title: 'Category',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'categorySlug',
+      name: 'slug',
       type: 'string',
       title: 'Slug',
       validation: Rule => Rule.required(),

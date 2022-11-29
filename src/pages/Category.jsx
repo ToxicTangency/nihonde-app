@@ -19,12 +19,12 @@ function Category() {
 
   let categoryName = '';
   if (posts[0]) {
-    categoryName = posts[0].postCategory.category;
+    categoryName = posts[0].category.name;
   }
   const [fetchPosts, isLoading] = useFetching(async () => {
     const response = await PostService.getAll();
     var result = response.filter(obj => {
-      return obj.postCategory.categorySlug === lastSegment;
+      return obj.category.slug === lastSegment;
     });
     setPosts(result);
   });

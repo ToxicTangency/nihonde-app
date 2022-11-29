@@ -7,6 +7,9 @@ export const useSortedPosts = (posts, sort) => {
         .sort((a, b) => a[sort].localeCompare(b[sort]))
         .reverse();
     }
+    if (sort === 'likes') {
+      return [...posts].sort((a, b) => a[sort] - b[sort]).reverse();
+    }
     if (sort) {
       return [...posts].sort((a, b) => a[sort].localeCompare(b[sort]));
     }

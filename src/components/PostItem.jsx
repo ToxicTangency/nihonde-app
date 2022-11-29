@@ -19,6 +19,7 @@ export default function PostItem(props) {
     } else {
       setLike((props.post.likes += 1));
       setIsLike(true);
+      console.log(props.post._id);
       client.patch(props.post._id).inc({ likes: 1 }).commit();
     }
   };
@@ -36,7 +37,7 @@ export default function PostItem(props) {
       <LikeButton onClick={() => addLike()} likes={props.post.likes} />
       <div className='post-card__image'>
         <img
-          onClick={() => router(`/posts/${props.post.id}`)}
+          onClick={() => router(`/posts/post-${props.post.id}`)}
           src={urlFor(props.post.image).url()}
           alt=''
         />
@@ -45,17 +46,17 @@ export default function PostItem(props) {
       <div className='post-card__content'>
         <div
           className='single-post__category'
-          onClick={() =>
-            router(`/category/${props.post.postCategory.categorySlug}`)
-          }>
-          {props.post.postCategory.category}
+          onClick={() => router(`/category/${props.post.category.slug}`)}>
+          {props.post.category.name}
         </div>
         <div
-          onClick={() => router(`/posts/${props.post.id}`)}
+          onClick={() => router(`/posts/post-${props.post.id}`)}
           className='single-post__title small'>
           {props.post.title}
         </div>
-        <div className='single-post__author'>{props.post.author}</div>
+        <div className='single-post__author'>
+          {props.post.date} {/*{props.post.author} */}
+        </div>
       </div>
     </div>
   );
