@@ -23,25 +23,41 @@
   display: flex;
 }
 
-.post-card.liked span, .single-post.liked .likes span:first-child{
-  background-color: #000;
-  color: #fff;
-}
-.single-post .likes{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.single-post .likes span{
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .filter{
   margin-top: 30px;
+}
+.post-card__image {
+  display: flex;
+  max-height: 520px;
+  box-shadow: 4px 4px 8px 0px rgb(34 60 80 / 10%);
+}
+.single-post__image {
+  display: flex;
+}
+.mainSwiperWrapper .single-post{
+    min-height: 735px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 31%;
+}
+.mainSwiperWrapper .single-post__wraper{
+  background: linear-gradient(269.84deg, #342D28 19.89%, rgba(17, 17, 17, 0.478354) 40.73%, rgba(52, 45, 40, 0) 61.56%);
+  min-height: 735px;
+}
+
+.mainSwiperWrapper .single-post__content {
+  width: 42%;
+  margin-left: auto;
+  margin-top: 120px;
+  text-align: right;
+  margin-right: 60px;
+}
+.mainSwiperWrapper .single-post__title{
+  color: #fff;
+}
+.mainSwiperWrapper .single-post__category{
+  font-size: 24px;
+  font-family: "Tenor Sans";
 }
 .single-post__title.small, 
 .post-card__image img, 

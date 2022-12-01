@@ -22,7 +22,7 @@ function Posts() {
   useEffect(() => {
     fetchPosts();
     window.scrollTo(0, 0);
-    document.title = 'Posts - NOICELAND';
+    document.title = 'Блог - NIHONDE';
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

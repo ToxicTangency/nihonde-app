@@ -9,7 +9,7 @@ export const PublicRoutes = [
   { path: '/', element: <Home />, exact: true },
   { path: '/about', element: <About />, exact: true },
   { path: '/posts', element: <Posts />, exact: true },
-  { path: '/posts/post-:id', element: <PostPage />, exact: true },
+  { path: '/posts/:slug', element: <PostPage />, exact: true },
   { path: '/category/:category', element: <Category />, exact: true },
   { path: '/error', element: <Error />, exact: true },
 ];

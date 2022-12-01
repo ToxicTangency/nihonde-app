@@ -7,41 +7,22 @@ import client from '../lib/client.js';
 import imageUrlBuilder from '@sanity/image-url';
 import { PortableText } from '@portabletext/react';
 import BlockContent from '../components/UI/BlockContent/BlockContent';
-import LikeButton from '../components/UI/LikeButton/LikeButton';
-import LikeCounter from '../components/UI/LikeCounter/LikeCounter';
+import Head from '../components/Head';
 
 export default function PostPage() {
   const params = useParams();
   const [post, setPost] = useState({});
 
   const [fetchPostById, isLoading] = useFetching(async () => {
-    const response = await PostService.getById(params.id);
+    const response = await PostService.getById(params.slug);
     setPost(response);
   });
 
   useEffect(() => {
-    fetchPostById(params.id);
+    fetchPostById(params.slug);
     window.scrollTo(0, 0);
-    document.title = 'Post ' + params.id + '  - NOICELAND';
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // eslint-disable-next-line
-  const [like, setLike] = useState(post.likes);
-
-  const [isLike, setIsLike] = useState(false);
-
-  const addLike = () => {
-    if (isLike) {
-      setLike((post.likes -= 1));
-      setIsLike(false);
-      client.patch(post._id).dec({ likes: 1 }).commit();
-    } else {
-      setLike((post.likes += 1));
-      setIsLike(true);
-      client.patch(post._id).inc({ likes: 1 }).commit();
-    }
-  };
 
   const router = useNavigate();
 
@@ -53,13 +34,12 @@ export default function PostPage() {
 
   return (
     <div>
+      {post.title && <Head title={post.title} />}
       {isLoading ? (
         <Loader />
       ) : (
-        <div className={isLike ? 'single-post liked' : 'single-post'}>
+        <div className='single-post'>
           <div className='single-post__wraper'>
-            <div id='like_button_container'></div>
-
             <div className='single-post__image'>
               {post.image && <img src={urlFor(post.image).url()} alt='' />}
             </div>
@@ -78,10 +58,6 @@ export default function PostPage() {
               </div>
 
               <div className='single-post__author'>{post.date}</div>
-              <div className='likes'>
-                <LikeButton onClick={() => addLike()} />
-                <LikeCounter likes={post.likes} />
-              </div>
             </div>
           </div>
         </div>

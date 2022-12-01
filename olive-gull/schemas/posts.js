@@ -7,12 +7,6 @@ export default {
   title: 'Posts',
   fields: [
     {
-      name: 'id',
-      type: 'number',
-      title: 'id',
-      validation: Rule => Rule.required(),
-    },
-    {
       name: 'title',
       type: 'string',
       title: 'Title',
@@ -20,7 +14,7 @@ export default {
     },
     {
       name: 'slug',
-      type: 'string',
+      type: 'slug',
       title: 'Slug',
       validation: Rule => Rule.required(),
     },
@@ -34,12 +28,6 @@ export default {
       name: 'text',
       type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'author',
-      type: 'string',
-      title: 'author',
       validation: Rule => Rule.required(),
     },
     {

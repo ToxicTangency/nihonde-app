@@ -18,8 +18,8 @@ export default function PostsSlider({ posts }) {
         virtual
         breakpoints={{ 320: { slidesPerView: 1 }, 780: { slidesPerView: 3 } }}>
         {posts.map((post, index) => (
-          <SwiperSlide key={post.id} virtualIndex={index}>
-            <PostItem number={post.id} post={post} />
+          <SwiperSlide key={post._id} virtualIndex={index}>
+            <PostItem number={post._id} post={post} />
           </SwiperSlide>
         ))}
       </Swiper>

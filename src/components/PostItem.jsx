@@ -1,29 +1,9 @@
-import React, { useState } from 'react';
-import LikeButton from './UI/LikeButton/LikeButton';
-import LikeCounter from './UI/LikeCounter/LikeCounter';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import client from '../lib/client.js';
 import imageUrlBuilder from '@sanity/image-url';
 
 export default function PostItem(props) {
-  // eslint-disable-next-line
-  const [like, setLike] = useState(props.post.likes);
-
-  const [isLike, setIsLike] = useState(false);
-
-  const addLike = () => {
-    if (isLike) {
-      setLike((props.post.likes -= 1));
-      setIsLike(false);
-      client.patch(props.post._id).dec({ likes: 1 }).commit();
-    } else {
-      setLike((props.post.likes += 1));
-      setIsLike(true);
-      console.log(props.post._id);
-      client.patch(props.post._id).inc({ likes: 1 }).commit();
-    }
-  };
-
   const router = useNavigate();
 
   const builder = imageUrlBuilder(client);
@@ -33,15 +13,13 @@ export default function PostItem(props) {
   }
 
   return (
-    <div className={isLike ? 'post-card liked' : 'post-card'}>
-      <LikeButton onClick={() => addLike()} likes={props.post.likes} />
+    <div className='post-card'>
       <div className='post-card__image'>
         <img
-          onClick={() => router(`/posts/post-${props.post.id}`)}
+          onClick={() => router(`/posts/${props.post.slug.current}`)}
           src={urlFor(props.post.image).url()}
           alt=''
         />
-        <LikeCounter likes={props.post.likes} />
       </div>
       <div className='post-card__content'>
         <div
@@ -50,7 +28,7 @@ export default function PostItem(props) {
           {props.post.category.name}
         </div>
         <div
-          onClick={() => router(`/posts/post-${props.post.id}`)}
+          onClick={() => router(`/posts/${props.post.slug.current}`)}
           className='single-post__title small'>
           {props.post.title}
         </div>

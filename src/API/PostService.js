@@ -4,7 +4,7 @@ import dateFormat from '../utils/postDate';
 let PROJECT_ID = 'epd7a49a';
 let DATASET = 'production';
 let QUERY = encodeURIComponent(`*[_type == "posts"]{
-  author, date, id, _id, image, text, title, likes, slug,
+  author, date, id, _id, image, text, title, slug,
   category->
 }`);
 let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
@@ -17,9 +17,10 @@ export default class PostService {
     return result;
   }
 
-  static async getById(id) {
-    let QUERY_BY_ID = encodeURIComponent(`*[_type == "posts" && id == ${id}]{
-      author, date, id, _id, image, text, title, likes, slug,
+  static async getById(slug) {
+    let QUERY_BY_ID =
+      encodeURIComponent(`*[_type == "posts" && slug.current == "${slug}"]{
+      author, date, _id, id, image, text, title, slug,
       category->
     }`);
     let PROJECT_BY_ID = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY_BY_ID}`;

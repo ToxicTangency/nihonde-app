@@ -1,10 +1,10 @@
-import imageUrlBuilder from '@sanity/image-url'
-import client from '../../../lib/client.js'
+import imageUrlBuilder from '@sanity/image-url';
+import client from '../../../lib/client.js';
 
-const builder = imageUrlBuilder(client)
+const builder = imageUrlBuilder(client);
 
 function urlFor(source) {
-  return builder.image(source)
+  return builder.image(source);
 }
 
 const SampleImageComponent = ({ value }) => {
@@ -12,16 +12,18 @@ const SampleImageComponent = ({ value }) => {
     <img
       src={urlFor().image(value).url()}
       alt={value.alt || ' '}
+      width={300}
+      height='auto'
       loading='lazy'
     />
-  )
-}
+  );
+};
 
 const BlockContent = {
   block: {},
   types: {
     image: SampleImageComponent,
   },
-}
+};
 
-export default BlockContent
+export default BlockContent;

@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { useFetching } from '../hooks/useFetching'
-import PostService from '../API/PostService'
-import Loader from '../components/UI/Loader/Loader'
-import client from '../lib/client.js'
-import imageUrlBuilder from '@sanity/image-url'
-import { PortableText } from '@portabletext/react'
-import BlockContent from '../components/UI/BlockContent/BlockContent'
+import React, { useState, useEffect } from 'react';
+import { useFetching } from '../hooks/useFetching';
+import PostService from '../API/PostService';
+import Loader from '../components/UI/Loader/Loader';
+import client from '../lib/client.js';
+import imageUrlBuilder from '@sanity/image-url';
+import { PortableText } from '@portabletext/react';
+import BlockContent from '../components/UI/BlockContent/BlockContent';
 
 export default function About() {
-  const [about, setAbout] = useState([])
+  const [about, setAbout] = useState([]);
 
   const [fetchAbout, isLoading] = useFetching(async () => {
-    const response = await PostService.getAbout()
-    setAbout(response[0])
-  })
+    const response = await PostService.getAbout();
+    setAbout(response[0]);
+  });
 
   useEffect(() => {
-    fetchAbout()
-    document.title = 'About - NOICELAND'
+    fetchAbout();
+    document.title = 'О нас - NIHONDE';
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
-  const builder = imageUrlBuilder(client)
+  const builder = imageUrlBuilder(client);
 
   function urlFor(source) {
-    return builder.image(source)
+    return builder.image(source);
   }
 
   return (
@@ -38,5 +38,5 @@ export default function About() {
       <div className='single-post__author'>{about.authors}</div>
       {isLoading && <Loader />}
     </div>
-  )
+  );
 }

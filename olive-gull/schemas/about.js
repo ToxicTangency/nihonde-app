@@ -34,7 +34,7 @@ export default {
       name: 'image',
       type: 'image',
       title: 'image',
-      validation: Rule => Rule.required(),
+      // validation: Rule => Rule.required(),
     },
   ],
 };

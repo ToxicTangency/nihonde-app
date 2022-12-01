@@ -13,11 +13,10 @@ export default function PostFilter({ filter, setFilter }) {
       <SortSelect
         value={filter.sort}
         onChange={selectedSort => setFilter({ ...filter, sort: selectedSort })}
-        defaultValue='По умолчанию'
+        defaultValue='Умолчанию'
         options={[
-          { value: 'title', name: 'По алфавиту' },
-          { value: 'date', name: 'По дате' },
-          { value: 'likes', name: 'По лайкам' },
+          { value: 'title', name: 'Алфавиту' },
+          { value: 'date', name: 'Дате' },
         ]}
       />
     </div>

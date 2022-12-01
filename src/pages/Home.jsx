@@ -28,13 +28,13 @@ export default function Home() {
   useEffect(() => {
     fetchPosts();
     fetchCategories();
-    document.title = 'Home - NOICELAND';
+    document.title = 'Главная - NIHONDE';
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className='homePage'>
-      <MainSlider posts={posts} />
+      <MainSlider posts={sortedPosts} />
       <CategorySlider categories={categories} />
       <PostsSlider posts={sortedPosts} />
       {isLoading && <Loader />}

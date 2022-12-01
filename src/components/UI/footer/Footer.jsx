@@ -18,16 +18,19 @@ export default function Footer() {
 
             <div className='footer__categories-wrapper'>
               <div className='footer__category'>
-                <Link to='/category/traditions'>Традиции</Link>
-              </div>
-              <div className='footer__category'>
-                <Link to='/'>Современная культура</Link>
+                <Link to='/category/history'>История</Link>
               </div>
               <div className='footer__category'>
                 <Link to='/category/food'>Кухня</Link>
               </div>
               <div className='footer__category'>
-                <Link to='/'>Архитектура</Link>
+                <Link to='/category/arhitecture'>Архитектура</Link>
+              </div>
+              <div className='footer__category'>
+                <Link to='/category/nature'>Природа</Link>
+              </div>
+              <div className='footer__category'>
+                <Link to='/category/modern-culture'>Современная культура</Link>
               </div>
             </div>
           </div>
